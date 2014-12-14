@@ -83,11 +83,5 @@ func readData(c *circuit.Client) ([]byte, error) {
 	}
 
 	data, err := ioutil.ReadAll(reader)
-
-	// err should be EOF
-	if err == nil || err == io.EOF {
-		return data, nil
-	}
-
 	return data, err
 }
